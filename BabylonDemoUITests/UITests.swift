@@ -1,14 +1,14 @@
 //
-//  BabylonDemoUITests.swift
+//  UITests.swift
 //  BabylonDemoUITests
 //
-//  Created by Hesham Mohamed on 3/1/19.
-//  Copyright © 2019 Hesham Mohamed. All rights reserved.
+//  Created by Hesham Mohamed on 12/30/18.
+//  Copyright © 2018 Hesham Mohamed. All rights reserved.
 //
 
 import XCTest
 
-class BabylonDemoUITests: XCTestCase {
+class UITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
