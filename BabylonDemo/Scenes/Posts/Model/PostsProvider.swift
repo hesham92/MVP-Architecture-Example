@@ -16,7 +16,7 @@ class PostsProvider: PostsProviderProtocol {
     func getPosts(completion: @escaping (Result<[Post]>) -> ()) {
         let api = HttpService<PostsAPI>()
 
-        api.request(.getPosts(), modelType: [Post].self) { (result) in
+        api.request(.getPosts, modelType: [Post].self) { (result) in
             DispatchQueue.main.async {
                 completion(result)
             }

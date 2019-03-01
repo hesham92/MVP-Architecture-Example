@@ -9,7 +9,7 @@
 import Foundation
 
 enum PostsAPI {
-    case getPosts()
+    case getPosts
 }
 
 extension PostsAPI: TargetType {
@@ -17,7 +17,7 @@ extension PostsAPI: TargetType {
 
     var path: String {
         switch self {
-        case .getPosts():
+        case .getPosts:
             return "/posts"
         }
     }

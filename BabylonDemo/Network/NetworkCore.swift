@@ -14,6 +14,7 @@ protocol TargetType {
     var method: HttpMethod { get }
     var jsonParameters: [String: Any] { get }
     var headers: [String: String]? { get }
+    func urlRequest() -> URLRequest
 }
 
 enum Result<ModelType: Decodable> {
@@ -30,23 +31,19 @@ enum HttpMethod: String {
 
 extension TargetType {
     func urlRequest() -> URLRequest {
-        // generate url
         let urlPath = [self.baseURL.absoluteString, self.path].joined()
         let url = URL(string: urlPath)!
 
         var request = URLRequest(url: url)
-
-        /// http method
         request.httpMethod = self.method.rawValue
 
-        /// body
+        //TODO: Handle post types
         switch self.method {
         case .get: break
         default:
             request.httpBody = try? JSONSerialization.data(withJSONObject: self.jsonParameters, options: [])
         }
 
-        /// headers
         self.headers?.forEach { it in
             request.addValue(it.value, forHTTPHeaderField: it.key)
         }
@@ -55,23 +52,24 @@ extension TargetType {
     }
 }
 
+protocol URLSessionProtocol {
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+}
+
+extension URLSession: URLSessionProtocol {}
+
 class HttpService<Target: TargetType> {
 
-    private var requestClosure: (Target) -> URLRequest
-    private var session: URLSession
+    private var session: URLSessionProtocol
 
-    init(
-        configuration: URLSessionConfiguration = URLSessionConfiguration.default,
-        requestClosure: @escaping ((Target) -> URLRequest) = { $0.urlRequest() }
-        ) {
-        self.session = URLSession(configuration: configuration)
-        self.requestClosure = requestClosure
+    init(session: URLSessionProtocol = URLSession.shared) {
+        self.session = session
     }
 
-    @discardableResult func request<ModelType: Decodable>(_ endpoint: Target, modelType: ModelType.Type, responseData: @escaping (Result<ModelType>) -> Void) -> URLSessionDataTask {
-        let request = requestClosure(endpoint)
+    func request<ModelType: Decodable>(_ endpoint: Target, modelType: ModelType.Type, responseData: @escaping (Result<ModelType>) -> Void) {
+        let request = endpoint.urlRequest()
 
-        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+        let task = session.dataTask(with: request) { data, _, error in
             guard let data = data else {
                 responseData(Result.failure(error!))
                 return
@@ -86,7 +84,5 @@ class HttpService<Target: TargetType> {
 
         }
         task.resume()
-
-        return task
     }
 }
