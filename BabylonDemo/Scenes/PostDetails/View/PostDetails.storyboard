@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Post Details View Controller-->
+        <scene sceneID="Vnf-kD-GVg">
+            <objects>
+                <viewController storyboardIdentifier="PostDetailsViewController" id="cVk-O1-SEy" customClass="PostDetailsViewController" customModule="BabylonDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hsa-zb-VOG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yID-ke-VCv">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AGx-lI-wLa">
+                                        <rect key="frame" x="10" y="20" width="355" height="120"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FPn-As-fje">
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfk-C1-m9D">
+                                                        <rect key="frame" x="0.0" y="0.0" width="101" height="50"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9LK-GK-nLq">
+                                                <rect key="frame" x="0.0" y="60" width="0.0" height="0.0"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifD-dX-u1r">
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lfi-Dc-viC">
+                                                <rect key="frame" x="0.0" y="70" width="160.33333333333334" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4C-1S-u2Q">
+                                                        <rect key="frame" x="0.0" y="0.0" width="160.33333333333334" height="50"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="p4C-1S-u2Q" firstAttribute="leading" secondItem="ifD-dX-u1r" secondAttribute="leading" id="YTQ-xK-sNb"/>
+                                            <constraint firstItem="ifD-dX-u1r" firstAttribute="leading" secondItem="nfk-C1-m9D" secondAttribute="leading" id="o20-uq-bGX"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="AGx-lI-wLa" firstAttribute="top" secondItem="yID-ke-VCv" secondAttribute="top" constant="20" id="NhM-NG-1Oj"/>
+                                    <constraint firstItem="AGx-lI-wLa" firstAttribute="leading" secondItem="yID-ke-VCv" secondAttribute="leading" constant="10" id="Rvk-iD-ohJ"/>
+                                    <constraint firstItem="AGx-lI-wLa" firstAttribute="centerX" secondItem="yID-ke-VCv" secondAttribute="centerX" id="dy3-23-2ek"/>
+                                    <constraint firstAttribute="bottom" secondItem="AGx-lI-wLa" secondAttribute="bottom" id="vVQ-Mh-OuT"/>
+                                    <constraint firstAttribute="trailing" secondItem="AGx-lI-wLa" secondAttribute="trailing" constant="10" id="zHO-p2-zUu"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GMm-Re-8Pf" firstAttribute="trailing" secondItem="yID-ke-VCv" secondAttribute="trailing" id="KW7-Mj-Lpb"/>
+                            <constraint firstItem="yID-ke-VCv" firstAttribute="leading" secondItem="GMm-Re-8Pf" secondAttribute="leading" id="Vdh-vF-tVt"/>
+                            <constraint firstItem="yID-ke-VCv" firstAttribute="top" secondItem="GMm-Re-8Pf" secondAttribute="top" id="sVS-E1-8Ah"/>
+                            <constraint firstItem="GMm-Re-8Pf" firstAttribute="bottom" secondItem="yID-ke-VCv" secondAttribute="bottom" id="vjD-Jv-f8Y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GMm-Re-8Pf"/>
+                    </view>
+                    <connections>
+                        <outlet property="authorNameLabel" destination="nfk-C1-m9D" id="E10-aF-3cU"/>
+                        <outlet property="commentsCountLabel" destination="p4C-1S-u2Q" id="7HM-32-i3u"/>
+                        <outlet property="descriptionLabel" destination="ifD-dX-u1r" id="4eB-wz-i2C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RE4-OR-if4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-636" y="85"/>
+        </scene>
+    </scenes>
+</document>

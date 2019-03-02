@@ -6,7 +6,9 @@
 //  Copyright © 2018 Hesham Mohamed. All rights reserved.
 //
 
-struct Post: Codable, Equatable {
+struct Post: Codable {
     let title: String
     let id: Int
+    let body: String
+    let userId: Int
 }

@@ -14,6 +14,13 @@
 		221216072229BA8300EA01E8 /* PostsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221216022229BA8300EA01E8 /* PostsPresenterTests.swift */; };
 		221216172229BACD00EA01E8 /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221216162229BACD00EA01E8 /* IntegrationTests.swift */; };
 		221216192229BB5300EA01E8 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221216182229BB5300EA01E8 /* UITests.swift */; };
+		222A97AD222AB6C9003BB7DF /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A97AC222AB6C9003BB7DF /* PostDetailsViewController.swift */; };
+		222A97B2222AB706003BB7DF /* PostDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222A97B1222AB706003BB7DF /* PostDetails.storyboard */; };
+		222A97B4222ABDA7003BB7DF /* PostDetailsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A97B3222ABDA7003BB7DF /* PostDetailsPresenterProtocol.swift */; };
+		222A97B6222ABE16003BB7DF /* PostDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A97B5222ABE16003BB7DF /* PostDetailsPresenter.swift */; };
+		222A97B8222ABF03003BB7DF /* PostDetailsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A97B7222ABF03003BB7DF /* PostDetailsViewProtocol.swift */; };
+		222A97BA222ABF71003BB7DF /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A97B9222ABF71003BB7DF /* Author.swift */; };
+		222A97BC222ABF7B003BB7DF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A97BB222ABF7B003BB7DF /* Comment.swift */; };
 		22DEF8652229B45000E6DD96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22DEF8642229B45000E6DD96 /* Assets.xcassets */; };
 		22DEF8682229B45000E6DD96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DEF8662229B45000E6DD96 /* LaunchScreen.storyboard */; };
 		22DEF8AE2229B62300E6DD96 /* PostsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DEF88C2229B62200E6DD96 /* PostsAPI.swift */; };
@@ -69,6 +76,13 @@
 		221216102229BAB900EA01E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		221216162229BACD00EA01E8 /* IntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
 		221216182229BB5300EA01E8 /* UITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
+		222A97AC222AB6C9003BB7DF /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
+		222A97B1222AB706003BB7DF /* PostDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostDetails.storyboard; sourceTree = "<group>"; };
+		222A97B3222ABDA7003BB7DF /* PostDetailsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsPresenterProtocol.swift; sourceTree = "<group>"; };
+		222A97B5222ABE16003BB7DF /* PostDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsPresenter.swift; sourceTree = "<group>"; };
+		222A97B7222ABF03003BB7DF /* PostDetailsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewProtocol.swift; sourceTree = "<group>"; };
+		222A97B9222ABF71003BB7DF /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		222A97BB222ABF7B003BB7DF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		22DEF85A2229B45000E6DD96 /* BabylonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DEF8642229B45000E6DD96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22DEF8672229B45000E6DD96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -165,6 +179,44 @@
 			path = BabylonDemoIntegrationTests;
 			sourceTree = "<group>";
 		};
+		222A97AB222AB692003BB7DF /* PostDetails */ = {
+			isa = PBXGroup;
+			children = (
+				222A97B0222AB6E0003BB7DF /* Model */,
+				222A97AF222AB6D5003BB7DF /* Presenter */,
+				222A97AE222AB6D0003BB7DF /* View */,
+			);
+			path = PostDetails;
+			sourceTree = "<group>";
+		};
+		222A97AE222AB6D0003BB7DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				222A97AC222AB6C9003BB7DF /* PostDetailsViewController.swift */,
+				222A97B1222AB706003BB7DF /* PostDetails.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		222A97AF222AB6D5003BB7DF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				222A97B3222ABDA7003BB7DF /* PostDetailsPresenterProtocol.swift */,
+				222A97B5222ABE16003BB7DF /* PostDetailsPresenter.swift */,
+				222A97B7222ABF03003BB7DF /* PostDetailsViewProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		222A97B0222AB6E0003BB7DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				222A97B9222ABF71003BB7DF /* Author.swift */,
+				222A97BB222ABF7B003BB7DF /* Comment.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		22DEF8512229B45000E6DD96 = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +297,7 @@
 		22DEF8932229B62300E6DD96 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				222A97AB222AB692003BB7DF /* PostDetails */,
 				22DEF8942229B62300E6DD96 /* Navigator */,
 				22DEF8A12229B62300E6DD96 /* Posts */,
 			);
@@ -454,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DEF8C22229B62300E6DD96 /* Posts.storyboard in Resources */,
+				222A97B2222AB706003BB7DF /* PostDetails.storyboard in Resources */,
 				22DEF8682229B45000E6DD96 /* LaunchScreen.storyboard in Resources */,
 				22DEF8652229B45000E6DD96 /* Assets.xcassets in Resources */,
 			);
@@ -596,11 +650,17 @@
 				22DEF8BF2229B62300E6DD96 /* Post.swift in Sources */,
 				22DEF8C32229B62300E6DD96 /* PostsViewController.swift in Sources */,
 				22DEF8C02229B62300E6DD96 /* PostsProvider.swift in Sources */,
+				222A97AD222AB6C9003BB7DF /* PostDetailsViewController.swift in Sources */,
+				222A97B4222ABDA7003BB7DF /* PostDetailsPresenterProtocol.swift in Sources */,
 				22DEF8C12229B62300E6DD96 /* PostTableViewCell.swift in Sources */,
 				22DEF8B02229B62300E6DD96 /* LoadViewShowing.swift in Sources */,
+				222A97B6222ABE16003BB7DF /* PostDetailsPresenter.swift in Sources */,
+				222A97BC222ABF7B003BB7DF /* Comment.swift in Sources */,
 				221215FC2229B8B400EA01E8 /* R.generated.swift in Sources */,
 				22DEF8BE2229B62300E6DD96 /* PostsViewProtocol.swift in Sources */,
 				22DEF8B12229B62300E6DD96 /* ErrorViewShowing.swift in Sources */,
+				222A97B8222ABF03003BB7DF /* PostDetailsViewProtocol.swift in Sources */,
+				222A97BA222ABF71003BB7DF /* Author.swift in Sources */,
 				22DEF8B22229B62300E6DD96 /* LoadingViewController.swift in Sources */,
 				22DEF8BC2229B62300E6DD96 /* PostsPresenter.swift in Sources */,
 				22DEF8AE2229B62300E6DD96 /* PostsAPI.swift in Sources */,

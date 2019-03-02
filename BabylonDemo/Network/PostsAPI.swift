@@ -10,6 +10,8 @@ import Foundation
 
 enum PostsAPI {
     case getPosts
+    case getAuthor(userId: Int)
+    case getComments(postId: Int)
 }
 
 extension PostsAPI: TargetType {
@@ -19,12 +21,20 @@ extension PostsAPI: TargetType {
         switch self {
         case .getPosts:
             return "/posts"
+        case .getAuthor(let userId):
+            return "/users?id=\(userId)"
+        case .getComments(let postId):
+            return "/comments?postId=\(postId)"
         }
     }
 
     var method: HttpMethod {
         switch self {
         case .getPosts:
+            return .get
+        case .getAuthor(_):
+            return .get
+        case .getComments(_):
             return .get
         }
     }

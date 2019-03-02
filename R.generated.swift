@@ -24,16 +24,23 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `PostDetails`.
+    static let postDetails = _R.storyboard.postDetails()
     /// Storyboard `Posts`.
     static let posts = _R.storyboard.posts()
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    
+    /// `UIStoryboard(name: "PostDetails", bundle: ...)`
+    static func postDetails(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.postDetails)
     }
     
     /// `UIStoryboard(name: "Posts", bundle: ...)`
@@ -65,6 +72,7 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try launchScreen.validate()
+      try postDetails.validate()
       try posts.validate()
     }
     
@@ -77,6 +85,24 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, *) {
         }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct postDetails: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PostDetails"
+      let postDetailsViewController = StoryboardViewControllerResource<PostDetailsViewController>(identifier: "PostDetailsViewController")
+      
+      func postDetailsViewController(_: Void = ()) -> PostDetailsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: postDetailsViewController)
+      }
+      
+      static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+        if _R.storyboard.postDetails().postDetailsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'postDetailsViewController' could not be loaded from storyboard 'PostDetails' as 'PostDetailsViewController'.") }
       }
       
       fileprivate init() {}

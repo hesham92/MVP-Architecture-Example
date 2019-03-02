@@ -19,7 +19,7 @@ class AppNavigator: Navigator {
     static let shared = AppNavigator()
 
     enum Destination {
-        case photoViewController(post: Post)
+        case postDetailsViewController(post: Post)
     }
 
     private weak var window: UIWindow?
@@ -43,14 +43,12 @@ class AppNavigator: Navigator {
 
     // MARK: - Private
     private func makeViewController(for destination: Destination) -> UIViewController {
-        return UIViewController()
-       /* switch destination {
-        case .photoViewController(let post):
-            let photosViewController = PhotosViewController.newController()
-            let photosPresenter = PhotosPresenter(post: post, view: photosViewController)
-            photosViewController.presenter = photosPresenter
-            return photosViewController
+        switch destination {
+        case .postDetailsViewController(let post):
+            let postDetailsViewController = PostDetailsViewController.newController()
+            let postDetailsPresenter = PostDetailsPresenter(post: post, view: postDetailsViewController)
+            postDetailsViewController.presenter = postDetailsPresenter
+            return postDetailsViewController
         }
- */
     }
 }

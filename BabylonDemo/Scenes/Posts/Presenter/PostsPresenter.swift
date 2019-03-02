@@ -52,6 +52,6 @@ class PostsPresenter: PostsPresenterProtocol {
     func didSelectPostAtIndexPath(_ indexPath: IndexPath) {
         let post = posts[indexPath.row]
         
-        navigator.navigate(to: .photoViewController(post: post))
+        navigator.navigate(to: .postDetailsViewController(post: post))
     }
 }
