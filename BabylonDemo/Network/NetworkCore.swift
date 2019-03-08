@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TargetType {
+protocol EndpointType {
     var baseURL: URL { get }
     var path: String { get }
     var method: HttpMethod { get }
@@ -17,7 +17,7 @@ protocol TargetType {
     func urlRequest() -> URLRequest
 }
 
-enum Result<ModelType: Decodable> {
+enum Result<ModelType> {
     case failure(Error)
     case success(ModelType)
 }
@@ -29,7 +29,7 @@ enum HttpMethod: String {
     case delete = "DELETE"
 }
 
-extension TargetType {
+extension EndpointType {
     func urlRequest() -> URLRequest {
         let urlPath = [self.baseURL.absoluteString, self.path].joined()
         let url = URL(string: urlPath)!
@@ -58,7 +58,7 @@ protocol URLSessionProtocol {
 
 extension URLSession: URLSessionProtocol {}
 
-class HttpService<Target: TargetType> {
+class HttpService<Endpoint: EndpointType> {
 
     private var session: URLSessionProtocol
 
@@ -66,7 +66,7 @@ class HttpService<Target: TargetType> {
         self.session = session
     }
 
-    func request<ModelType: Decodable>(_ endpoint: Target, modelType: ModelType.Type, responseData: @escaping (Result<ModelType>) -> Void) {
+    func request<ModelType: Codable>(_ endpoint: Endpoint, modelType: ModelType.Type, responseData: @escaping (Result<ModelType>) -> Void) {
         let request = endpoint.urlRequest()
 
         let task = session.dataTask(with: request) { data, _, error in

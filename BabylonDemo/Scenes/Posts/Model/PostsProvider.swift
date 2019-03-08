@@ -18,7 +18,7 @@ class PostsProvider: PostsProviderProtocol {
     private let completionQueue: DispatchQueue
     private var cache: Cache
     private let api: HttpService<PostsAPI>
-    private var isOnline = false
+    private var isOnline = true
 
     init(completionQueue: DispatchQueue = .main, cache: Cache = RealmCache(), api: HttpService<PostsAPI> = HttpService<PostsAPI>()) {
         self.completionQueue = completionQueue

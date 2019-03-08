@@ -14,7 +14,7 @@ enum PostsAPI {
     case getComments(postId: Int)
 }
 
-extension PostsAPI: TargetType {
+extension PostsAPI: EndpointType {
     var baseURL: URL { return URL(string: "https://jsonplaceholder.typicode.com")! }
 
     var path: String {
