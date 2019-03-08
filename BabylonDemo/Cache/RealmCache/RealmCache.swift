@@ -35,7 +35,7 @@ class RealmCache: Cache {
         }
     }
 
-    func getAuthor(userId: Int) -> Author? {
+    func getAuthor(postId userId: Int) -> Author? {
         return realm.object(ofType: CacheAuthor.self, forPrimaryKey: userId)?.author
     }
 

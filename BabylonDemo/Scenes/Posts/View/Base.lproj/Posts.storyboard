@@ -48,6 +48,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabel" value="PostsTableView"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="YoX-Eg-Zsj"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="qv9-gN-Gfe"/>

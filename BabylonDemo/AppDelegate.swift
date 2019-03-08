@@ -20,8 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
 
+        InternetConnection.shared.setObservers()
         AppNavigator.shared.start(window: &window)
-
+        
         return true
     }
 }

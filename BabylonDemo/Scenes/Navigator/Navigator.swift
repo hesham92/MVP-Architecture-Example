@@ -15,17 +15,14 @@ protocol Navigator: class {
 }
 
 class AppNavigator: Navigator {
-
+    private weak var window: UIWindow?
+    private var navigationController: UINavigationController?
     static let shared = AppNavigator()
 
     enum Destination {
         case postDetailsViewController(post: Post)
     }
 
-    private weak var window: UIWindow?
-    private var navigationController: UINavigationController?
-
-    // MARK: - Navigator
     func navigate(to destination: Destination) {
         let viewController = makeViewController(for: destination)
         navigationController?.pushViewController(viewController, animated: true)
@@ -41,7 +38,6 @@ class AppNavigator: Navigator {
         self.window = window
     }
 
-    // MARK: - Private
     private func makeViewController(for destination: Destination) -> UIViewController {
         switch destination {
         case .postDetailsViewController(let post):

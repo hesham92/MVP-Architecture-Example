@@ -23,20 +23,20 @@ class PostsViewController: UIViewController, LoadingViewShowing, ErrorViewShowin
     }
 
     class func navigationController() -> UINavigationController {
-
         return R.storyboard.posts.instantiateInitialViewController()!
     }
 }
 
 extension PostsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return presenter.postsCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.postTableViewCell, for: indexPath)!
+
+        cell.accessibilityIdentifier = "MyCell_\(indexPath.row)"
 
         presenter.configureCell(cell, atIndexPath: indexPath)
 

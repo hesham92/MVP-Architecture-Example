@@ -9,17 +9,37 @@
 import UIKit
 
 class PostsPresenter: PostsPresenterProtocol {
-
     typealias PostsView = PostsViewProtocol & LoadingViewShowing & ErrorViewShowing
     private weak var view: PostsView?
     private weak var navigator: AppNavigator!
     private var postsProvider: PostsProviderProtocol
     private(set) var posts: [Post] = []
+    private var networkError: NetworkError? = nil
 
     init(view: PostsView, navigator: AppNavigator = .shared, postsProvider: PostsProviderProtocol = PostsProvider()) {
         self.view = view
         self.navigator = navigator
         self.postsProvider = postsProvider
+        self.addInternetObservers()
+    }
+
+    @objc private func handleInternetStatus(notification: NSNotification){
+        if let online = notification.userInfo?[InternetConnection.Keys.InternetStatus] as? Bool {
+            if online {
+                if networkError != nil {
+                    self.networkError = nil
+                    self.getPosts()
+                }
+            }
+        }
+    }
+
+    func addInternetObservers() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.handleInternetStatus),
+            name: .InternetStatus,
+            object: nil)
     }
 
     var postsCount: Int {
@@ -28,7 +48,10 @@ class PostsPresenter: PostsPresenterProtocol {
 
     func viewDidLoad() {
         self.view?.showLoading()
+        self.getPosts()
+    }
 
+    private func getPosts() {
         self.postsProvider.getPosts { [weak self] (result) in
             guard let self = self else { return }
             self.view?.hideLoading()
@@ -39,19 +62,23 @@ class PostsPresenter: PostsPresenterProtocol {
                 self.view?.showPosts()
             case .failure(let error):
                 self.view?.showError(error)
+
+                if let error = NetworkError(error: error), error == .noInternet {
+                    self.networkError = error
+                    self.posts = self.postsProvider.cache.posts
+                    self.view?.showPosts()
+                }
             }
         }
     }
 
     func configureCell(_ cell: PostCell, atIndexPath indexPath: IndexPath) {
         let post = posts[indexPath.row]
-
         cell.postTitle = post.title
     }
 
     func didSelectPostAtIndexPath(_ indexPath: IndexPath) {
         let post = posts[indexPath.row]
-        
         navigator.navigate(to: .postDetailsViewController(post: post))
     }
 }

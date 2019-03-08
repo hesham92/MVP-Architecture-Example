@@ -4,6 +4,7 @@ target 'BabylonDemo' do
   pod 'R.swift'
   pod 'NotificationBannerSwift'
   pod 'RealmSwift'
+  pod 'ReachabilitySwift'
 
   target 'BabylonDemoTests' do
     inherit! :search_paths

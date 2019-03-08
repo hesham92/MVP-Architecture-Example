@@ -37,7 +37,7 @@ class PostsProviderMock: PostsProviderProtocol {
     var commentsResult: Result<[Comment]>?
     var authorResult: Result<Author>?
 
-    func getAuthor(userId: Int, completion: @escaping (Result<Author>) -> ()) {
+    func getAuthor(postId: Int, completion: @escaping (Result<Author>) -> ()) {
 
     }
 

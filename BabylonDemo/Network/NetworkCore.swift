@@ -86,3 +86,18 @@ class HttpService<Endpoint: EndpointType> {
         task.resume()
     }
 }
+
+// MARK: - Errors
+
+enum NetworkError: Error {
+    case noInternet
+
+    init?(error: Error) {
+        guard let underlyingError = error._userInfo?[NSUnderlyingErrorKey] as? NSError,
+            underlyingError.domain == kCFErrorDomainCFNetwork as String else {
+                return nil
+        }
+
+        self = .noInternet
+    }
+}

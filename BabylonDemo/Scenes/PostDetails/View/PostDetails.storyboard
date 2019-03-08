@@ -29,6 +29,9 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfk-C1-m9D">
                                                         <rect key="frame" x="0.0" y="0.0" width="101" height="50"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="AuthorName">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -39,6 +42,9 @@
                                                 <rect key="frame" x="0.0" y="60" width="0.0" height="0.0"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifD-dX-u1r">
+                                                        <accessibility key="accessibilityConfiguration" identifier="Description">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -50,6 +56,9 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4C-1S-u2Q">
                                                         <rect key="frame" x="0.0" y="0.0" width="160.33333333333334" height="50"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="CommentsCount">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -73,6 +82,9 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" label="PostDetailsViewController">
+                            <bool key="isElement" value="NO"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="GMm-Re-8Pf" firstAttribute="trailing" secondItem="yID-ke-VCv" secondAttribute="trailing" id="KW7-Mj-Lpb"/>
                             <constraint firstItem="yID-ke-VCv" firstAttribute="leading" secondItem="GMm-Re-8Pf" secondAttribute="leading" id="Vdh-vF-tVt"/>
