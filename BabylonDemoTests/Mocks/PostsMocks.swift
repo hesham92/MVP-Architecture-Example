@@ -33,9 +33,20 @@ class PostsViewMock: PostsViewProtocol, LoadingViewShowing, ErrorViewShowing {
 }
 
 class PostsProviderMock: PostsProviderProtocol {
-    var result: Result<[Post]> = .success([])
+    var postsResult: Result<[Post]>?
+    var commentsResult: Result<[Comment]>?
+    var authorResult: Result<Author>?
+
+    func getAuthor(userId: Int, completion: @escaping (Result<Author>) -> ()) {
+
+    }
+
+    func getComments(postId: Int, completion: @escaping (Result<[Comment]>) -> ()) {
+
+    }
+
     func getPosts(completion: @escaping (Result<[Post]>) -> ()) {
-        completion(result)
+        completion(postsResult!)
     }
 }
 

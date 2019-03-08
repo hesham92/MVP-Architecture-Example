@@ -15,6 +15,7 @@ class PostsPresenterTests: XCTestCase {
     private var view: PostsViewMock!
     private var postsProvider: PostsProviderMock!
     private var navigator: MockAppNavigator!
+    private let posts = [Post(title: "Alb1", id: 1, body: "body1", userId: 1), Post(title: "Alb2", id: 2, body: "body2", userId: 1)]
 
     override func setUp() {
 
@@ -32,9 +33,8 @@ class PostsPresenterTests: XCTestCase {
     }
 
     func testViewDidLoadSuccess() {
-        let posts = [Post(title: "Alb1", id: 1), Post(title: "Alb2", id: 2)]
-        postsProvider.result = .success(posts)
 
+        postsProvider.postsResult = .success(posts)
         presenter.viewDidLoad()
 
         XCTAssertTrue(view.didShowLoading)
@@ -49,7 +49,7 @@ class PostsPresenterTests: XCTestCase {
         struct MockError: Error {}
         let error = MockError()
 
-        postsProvider.result = .failure(error)
+        postsProvider.postsResult = .failure(error)
         presenter.viewDidLoad()
 
         XCTAssertTrue(view.didShowLoading)
@@ -59,9 +59,7 @@ class PostsPresenterTests: XCTestCase {
     }
 
     func testConfigureCell() {
-        let posts = [Post(title: "Alb1", id: 1), Post(title: "Alb2", id: 2)]
-        postsProvider.result = .success(posts)
-
+        postsProvider.postsResult = .success(posts)
         presenter.viewDidLoad()
 
         let postCellMock = PostCellMock()
@@ -72,16 +70,16 @@ class PostsPresenterTests: XCTestCase {
     }
 
     func testDidSelectPostAtIndexPath() {
-        let posts = [Post(title: "Alb1", id: 1), Post(title: "Alb2", id: 2)]
-        postsProvider.result = .success(posts)
 
+        postsProvider.postsResult = .success(posts)
         presenter.viewDidLoad()
+
         let indexPath = IndexPath(row: 0, section: 0)
-        
         presenter.didSelectPostAtIndexPath(indexPath)
 
         switch navigator.destination {
-        case .photoViewController(let post)?:
+
+        case .postDetailsViewController(let post)?:
             XCTAssertEqual(post, posts[indexPath.row])
         default:
             XCTFail()

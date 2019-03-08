@@ -16,8 +16,8 @@ protocol LoadingViewShowing: class {
 fileprivate var loadingViewControllerKey = "loadingViewControllerKey"
 
 extension LoadingViewShowing where Self: UIViewController {
-
-    /// Simulate stored property.
+    
+    // Simulate stored property.
     var loadingViewController: LoadingViewController? {
         get {
             return objc_getAssociatedObject(self, &loadingViewControllerKey) as? LoadingViewController

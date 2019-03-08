@@ -10,10 +10,8 @@ import Foundation
 
 protocol Cache {
     var posts: [Post] { get set }
-    
     func getAuthor(userId: Int) -> Author?
     func addAuthor(author: Author)
-
     func getComments(postId: Int) -> [Comment]?
     func addComments(comments: [Comment])
 }

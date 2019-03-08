@@ -17,17 +17,18 @@ protocol PostsProviderProtocol {
 class PostsProvider: PostsProviderProtocol {
     private let completionQueue: DispatchQueue
     private var cache: Cache
-    private let api = HttpService<PostsAPI>()
+    private let api: HttpService<PostsAPI>
     private var isOnline = false
 
-    init(completionQueue: DispatchQueue = .main, cache: Cache = RealmCache()) {
+    init(completionQueue: DispatchQueue = .main, cache: Cache = RealmCache(), api: HttpService<PostsAPI> = HttpService<PostsAPI>()) {
         self.completionQueue = completionQueue
         self.cache = cache
+        self.api = api
     }
 
     func getPosts(completion: @escaping (Result<[Post]>) -> ()) {
         if isOnline {
-            api.request(.getPosts, modelType: [Post].self) { (result) in
+            api.request(.getPosts, modelType: [Post].self) { result in
                 self.completionQueue.async {
                     completion(result)
                 }
@@ -48,7 +49,7 @@ class PostsProvider: PostsProviderProtocol {
     }
 
     func getAuthor(userId: Int, completion: @escaping (Result<Author>) -> ()) {
-        api.request(.getAuthor(userId: userId), modelType: [Author].self) { (result) in
+        api.request(.getAuthor(userId: userId), modelType: [Author].self) { result in
             if self.isOnline {
                 self.completionQueue.async {
                     switch result {
