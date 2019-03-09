@@ -1,5 +1,5 @@
 //
-//  PostPresenterDetailsTests.swift
+//  PostDetailsPresenterTests.swift
 //  BabylonDemoTests
 //
 //  Created by Hesham Mohamed on 3/9/19.

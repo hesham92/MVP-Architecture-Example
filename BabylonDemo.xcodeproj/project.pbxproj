@@ -296,6 +296,8 @@
 			children = (
 				22DEF8922229B62300E6DD96 /* AppDelegate.swift */,
 				221215FB2229B8B400EA01E8 /* R.generated.swift */,
+				22DEF8942229B62300E6DD96 /* Navigator */,
+				222896AD2232CFD800F06F85 /* PostsProvider */,
 				22F5934A222B18A900EFD8D6 /* Cache */,
 				22DEF88B2229B62200E6DD96 /* Network */,
 				22DEF88E2229B62200E6DD96 /* Plugins */,
@@ -349,9 +351,7 @@
 		22DEF8932229B62300E6DD96 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				222896AD2232CFD800F06F85 /* PostsProvider */,
 				222A97AB222AB692003BB7DF /* PostDetails */,
-				22DEF8942229B62300E6DD96 /* Navigator */,
 				22DEF8A12229B62300E6DD96 /* Posts */,
 			);
 			path = Scenes;
