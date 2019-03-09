@@ -10,7 +10,7 @@
 		1CCF9877536EF9C84525D25F /* Pods_BabylonDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A440AC68A790600A5B716534 /* Pods_BabylonDemoTests.framework */; };
 		221215FC2229B8B400EA01E8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221215FB2229B8B400EA01E8 /* R.generated.swift */; };
 		221216052229BA8300EA01E8 /* GeneralMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221216002229BA8300EA01E8 /* GeneralMocks.swift */; };
-		221216062229BA8300EA01E8 /* PostsMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221216012229BA8300EA01E8 /* PostsMocks.swift */; };
+		221216062229BA8300EA01E8 /* PostsViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221216012229BA8300EA01E8 /* PostsViewMock.swift */; };
 		221216072229BA8300EA01E8 /* PostsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221216022229BA8300EA01E8 /* PostsPresenterTests.swift */; };
 		221216172229BACD00EA01E8 /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221216162229BACD00EA01E8 /* IntegrationTests.swift */; };
 		221216192229BB5300EA01E8 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221216182229BB5300EA01E8 /* UITests.swift */; };
@@ -22,6 +22,8 @@
 		222A97BA222ABF71003BB7DF /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A97B9222ABF71003BB7DF /* Author.swift */; };
 		222A97BC222ABF7B003BB7DF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A97BB222ABF7B003BB7DF /* Comment.swift */; };
 		22A626D72232C5D4007C1D08 /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A626D62232C5D4007C1D08 /* InternetConnection.swift */; };
+		22B99DAE2234186F00A5D018 /* PostDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B99DAD2234186F00A5D018 /* PostDetailsPresenterTests.swift */; };
+		22B99DB02234293500A5D018 /* PostDetailsViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B99DAF2234293500A5D018 /* PostDetailsViewMock.swift */; };
 		22DEF8652229B45000E6DD96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22DEF8642229B45000E6DD96 /* Assets.xcassets */; };
 		22DEF8682229B45000E6DD96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DEF8662229B45000E6DD96 /* LaunchScreen.storyboard */; };
 		22DEF8AE2229B62300E6DD96 /* PostsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DEF88C2229B62200E6DD96 /* PostsAPI.swift */; };
@@ -76,7 +78,7 @@
 		215582D5448935B5D756B840 /* Pods_BabylonDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabylonDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221215FB2229B8B400EA01E8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		221216002229BA8300EA01E8 /* GeneralMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralMocks.swift; sourceTree = "<group>"; };
-		221216012229BA8300EA01E8 /* PostsMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsMocks.swift; sourceTree = "<group>"; };
+		221216012229BA8300EA01E8 /* PostsViewMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewMock.swift; sourceTree = "<group>"; };
 		221216022229BA8300EA01E8 /* PostsPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsPresenterTests.swift; sourceTree = "<group>"; };
 		2212160C2229BAB900EA01E8 /* BabylonDemoIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabylonDemoIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		221216102229BAB900EA01E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +92,8 @@
 		222A97B9222ABF71003BB7DF /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		222A97BB222ABF7B003BB7DF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		22A626D62232C5D4007C1D08 /* InternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
+		22B99DAD2234186F00A5D018 /* PostDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsPresenterTests.swift; sourceTree = "<group>"; };
+		22B99DAF2234293500A5D018 /* PostDetailsViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewMock.swift; sourceTree = "<group>"; };
 		22DEF85A2229B45000E6DD96 /* BabylonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DEF8642229B45000E6DD96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22DEF8672229B45000E6DD96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -177,7 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				221216002229BA8300EA01E8 /* GeneralMocks.swift */,
-				221216012229BA8300EA01E8 /* PostsMocks.swift */,
+				221216012229BA8300EA01E8 /* PostsViewMock.swift */,
+				22B99DAF2234293500A5D018 /* PostDetailsViewMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 		22DEF8712229B45000E6DD96 /* BabylonDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				22B99DAD2234186F00A5D018 /* PostDetailsPresenterTests.swift */,
 				221216022229BA8300EA01E8 /* PostsPresenterTests.swift */,
 				221215FE2229BA8300EA01E8 /* Mocks */,
 				22DEF8742229B45000E6DD96 /* Info.plist */,
@@ -756,8 +762,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				221216072229BA8300EA01E8 /* PostsPresenterTests.swift in Sources */,
+				22B99DAE2234186F00A5D018 /* PostDetailsPresenterTests.swift in Sources */,
 				221216052229BA8300EA01E8 /* GeneralMocks.swift in Sources */,
-				221216062229BA8300EA01E8 /* PostsMocks.swift in Sources */,
+				221216062229BA8300EA01E8 /* PostsViewMock.swift in Sources */,
+				22B99DB02234293500A5D018 /* PostDetailsViewMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

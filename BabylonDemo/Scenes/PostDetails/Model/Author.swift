@@ -6,7 +6,7 @@
 //  Copyright © 2019 Hesham Mohamed. All rights reserved.
 //
 
-struct Author: Codable {
+struct Author: Codable, Equatable {
     let id: Int
     let name: String
     let username: String
@@ -14,7 +14,7 @@ struct Author: Codable {
     let address: Address
 }
 
-struct Address: Codable {
+struct Address: Codable, Equatable {
     let street: String
     let suite: String
     let city: String
@@ -22,7 +22,7 @@ struct Address: Codable {
     let geo: Geo
 }
 
-struct Geo: Codable {
+struct Geo: Codable, Equatable {
     let lat: String
     let lng: String
 }

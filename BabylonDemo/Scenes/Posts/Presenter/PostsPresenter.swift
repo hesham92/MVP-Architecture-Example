@@ -15,11 +15,14 @@ class PostsPresenter: PostsPresenterProtocol {
     private var postsProvider: PostsProviderProtocol
     private(set) var posts: [Post] = []
     private var networkError: NetworkError? = nil
+    private var notificationCenter: NotificationCenter
 
-    init(view: PostsView, navigator: AppNavigator = .shared, postsProvider: PostsProviderProtocol = PostsProvider()) {
+
+    init(view: PostsView, navigator: AppNavigator = .shared, postsProvider: PostsProviderProtocol = PostsProvider(), notificationCenter: NotificationCenter = NotificationCenter.default) {
         self.view = view
         self.navigator = navigator
         self.postsProvider = postsProvider
+        self.notificationCenter = notificationCenter
         self.addInternetObservers()
     }
 
@@ -35,7 +38,7 @@ class PostsPresenter: PostsPresenterProtocol {
     }
 
     func addInternetObservers() {
-        NotificationCenter.default.addObserver(
+        notificationCenter.addObserver(
             self,
             selector: #selector(self.handleInternetStatus),
             name: .InternetStatus,
@@ -47,11 +50,11 @@ class PostsPresenter: PostsPresenterProtocol {
     }
 
     func viewDidLoad() {
-        self.view?.showLoading()
         self.getPosts()
     }
 
     private func getPosts() {
+        self.view?.showLoading()
         self.postsProvider.getPosts { [weak self] (result) in
             guard let self = self else { return }
             self.view?.hideLoading()

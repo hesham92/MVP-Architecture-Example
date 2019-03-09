@@ -11,7 +11,7 @@ import Foundation
 protocol PostsProviderProtocol {
     var cache: ReadOnlyCache { get }
     func getPosts(completion: @escaping (Result<[Post]>) -> ())
-    func getAuthor(postId: Int, completion: @escaping (Result<Author>) -> ())
+    func getAuthor(userId: Int, completion: @escaping (Result<Author>) -> ())
     func getComments(postId: Int, completion: @escaping (Result<[Comment]>) -> ())
 }
 
@@ -47,8 +47,8 @@ class PostsProvider: PostsProviderProtocol {
         }
     }
 
-    func getAuthor(postId: Int, completion: @escaping (Result<Author>) -> ()) {
-        api.request(.getAuthor(userId: postId), modelType: [Author].self) { result in
+    func getAuthor(userId: Int, completion: @escaping (Result<Author>) -> ()) {
+        api.request(.getAuthor(userId: userId), modelType: [Author].self) { result in
             self.completionQueue.async {
                 switch result {
                 case .success(let authors):

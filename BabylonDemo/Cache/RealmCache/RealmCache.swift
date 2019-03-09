@@ -11,7 +11,12 @@ import RealmSwift
 
 class RealmCache: Cache {
 
-    private var realm: Realm { return try! Realm() }
+    private var realm: Realm { return realmFactory() }
+    private let realmFactory: () -> Realm
+
+    init(realmFactory: @escaping () -> Realm = { try! Realm() } ) {
+        self.realmFactory = realmFactory
+    }
 
     var posts: [Post] {
         get {
@@ -35,7 +40,7 @@ class RealmCache: Cache {
         }
     }
 
-    func getAuthor(postId userId: Int) -> Author? {
+    func getAuthor(userId: Int) -> Author? {
         return realm.object(ofType: CacheAuthor.self, forPrimaryKey: userId)?.author
     }
 

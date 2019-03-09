@@ -32,24 +32,6 @@ class PostsViewMock: PostsViewProtocol, LoadingViewShowing, ErrorViewShowing {
     }
 }
 
-class PostsProviderMock: PostsProviderProtocol {
-    var postsResult: Result<[Post]>?
-    var commentsResult: Result<[Comment]>?
-    var authorResult: Result<Author>?
-
-    func getAuthor(postId: Int, completion: @escaping (Result<Author>) -> ()) {
-
-    }
-
-    func getComments(postId: Int, completion: @escaping (Result<[Comment]>) -> ()) {
-
-    }
-
-    func getPosts(completion: @escaping (Result<[Post]>) -> ()) {
-        completion(postsResult!)
-    }
-}
-
 class PostCellMock: PostCell {
     var postTitle: String?
 }
