@@ -1,6 +1,5 @@
 target 'BabylonDemo' do
   use_frameworks!
-  pod 'Kingfisher', '~> 5.0'
   pod 'R.swift'
   pod 'NotificationBannerSwift'
   pod 'RealmSwift'
