@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1CCF9877536EF9C84525D25F /* Pods_BabylonDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A440AC68A790600A5B716534 /* Pods_BabylonDemoTests.framework */; };
 		221215FC2229B8B400EA01E8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221215FB2229B8B400EA01E8 /* R.generated.swift */; };
-		221216052229BA8300EA01E8 /* GeneralMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221216002229BA8300EA01E8 /* GeneralMocks.swift */; };
+		221216052229BA8300EA01E8 /* MockAppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221216002229BA8300EA01E8 /* MockAppNavigator.swift */; };
 		221216062229BA8300EA01E8 /* PostsViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221216012229BA8300EA01E8 /* PostsViewMock.swift */; };
 		221216072229BA8300EA01E8 /* PostsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221216022229BA8300EA01E8 /* PostsPresenterTests.swift */; };
 		221216172229BACD00EA01E8 /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221216162229BACD00EA01E8 /* IntegrationTests.swift */; };
@@ -77,7 +77,7 @@
 /* Begin PBXFileReference section */
 		215582D5448935B5D756B840 /* Pods_BabylonDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabylonDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221215FB2229B8B400EA01E8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		221216002229BA8300EA01E8 /* GeneralMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralMocks.swift; sourceTree = "<group>"; };
+		221216002229BA8300EA01E8 /* MockAppNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAppNavigator.swift; sourceTree = "<group>"; };
 		221216012229BA8300EA01E8 /* PostsViewMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewMock.swift; sourceTree = "<group>"; };
 		221216022229BA8300EA01E8 /* PostsPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsPresenterTests.swift; sourceTree = "<group>"; };
 		2212160C2229BAB900EA01E8 /* BabylonDemoIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabylonDemoIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,7 +180,7 @@
 		221215FE2229BA8300EA01E8 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				221216002229BA8300EA01E8 /* GeneralMocks.swift */,
+				221216002229BA8300EA01E8 /* MockAppNavigator.swift */,
 				221216012229BA8300EA01E8 /* PostsViewMock.swift */,
 				22B99DAF2234293500A5D018 /* PostDetailsViewMock.swift */,
 			);
@@ -763,7 +763,7 @@
 			files = (
 				221216072229BA8300EA01E8 /* PostsPresenterTests.swift in Sources */,
 				22B99DAE2234186F00A5D018 /* PostDetailsPresenterTests.swift in Sources */,
-				221216052229BA8300EA01E8 /* GeneralMocks.swift in Sources */,
+				221216052229BA8300EA01E8 /* MockAppNavigator.swift in Sources */,
 				221216062229BA8300EA01E8 /* PostsViewMock.swift in Sources */,
 				22B99DB02234293500A5D018 /* PostDetailsViewMock.swift in Sources */,
 			);

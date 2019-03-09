@@ -8,9 +8,7 @@
 
 import UIKit
 
-class PostTableViewCell: UITableViewCell, PostCell {
-    
-    //MARK: - Outlets
+class PostTableViewCell: UITableViewCell, PostCell {    
     @IBOutlet weak var postTitleLabel: UILabel!
 
     var postTitle: String? {

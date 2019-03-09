@@ -9,11 +9,8 @@
 import UIKit
 
 class PostsViewController: UIViewController, LoadingViewShowing, ErrorViewShowing {
-    
-    //MARK: - Outlets
    @IBOutlet private weak var postsTableView: UITableView!
 
-    //MARK: - Properties
     var presenter: PostsPresenterProtocol!
 
     override func viewDidLoad() {
@@ -33,11 +30,8 @@ extension PostsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.postTableViewCell, for: indexPath)!
-
         cell.accessibilityIdentifier = "MyCell_\(indexPath.row)"
-
         presenter.configureCell(cell, atIndexPath: indexPath)
 
         return cell
@@ -52,7 +46,6 @@ extension PostsViewController: UITableViewDelegate {
 }
 
 extension PostsViewController: PostsViewProtocol {
-
     func showPosts() {
         self.postsTableView.reloadData()
     }

@@ -10,15 +10,10 @@ import XCTest
 @testable import BabylonDemo
 
 class IntegrationTests: XCTestCase {
-
     private var postsProvider: PostsProviderProtocol!
 
     override func setUp() {
         postsProvider = PostsProvider()
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
     func testGetPostsAPI() {

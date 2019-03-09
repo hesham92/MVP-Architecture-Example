@@ -1,5 +1,5 @@
 //
-//  GeneralMocks.swift
+//  MockAppNavigator.swift
 //  BabylonDemoTests
 //
 //  Created by Hesham Mohamed on 12/29/18.

@@ -84,7 +84,7 @@ class PostDetailsPresenter: PostDetailsPresenterProtocol {
         }
     }
 
-    func addInternetObserver() {
+   private func addInternetObserver() {
         self.notificationCenter.addObserver(self,selector: #selector(self.handleInternetStatus),name: .InternetStatus, object: nil)
     }
 

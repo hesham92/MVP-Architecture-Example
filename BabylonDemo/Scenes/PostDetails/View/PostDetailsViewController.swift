@@ -9,13 +9,10 @@
 import UIKit
 
 class PostDetailsViewController: UIViewController, ErrorViewShowing, LoadingViewShowing {
-
-    //MARK: - Outlets
     @IBOutlet weak var commentsCountLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var authorNameLabel: UILabel!
 
-    //MARK: - Properties
     var presenter: PostDetailsPresenter!
 
     class func newController() -> PostDetailsViewController {
